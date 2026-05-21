@@ -1,0 +1,36 @@
+{
+  "name": "my-ci-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src tests",
+    "format:check": "prettier --check 'src/**/*.js' 'tests/**/*.js'",
+    "format": "prettier --write 'src/**/*.js' 'tests/**/*.js'",
+    "test": "jest --coverage",
+    "build": "echo 'Building app...' && mkdir -p dist && cp -r src/* dist/",
+    "start": "node src/index.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": ["src/**/*.js"],
+    "coverageReporters": ["text", "lcov"]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.0",
+    "globals": "^17.6.0",
+    "jest": "^30.4.2",
+    "prettier": "^3.8.3",
+    "supertest": "^7.2.2"
+  }
+}
